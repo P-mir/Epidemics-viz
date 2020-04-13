@@ -5,6 +5,7 @@ from dash.dependencies import Input, Output
 import pandas as pd
 import plotly.express as px
 
+import gunicorn
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 

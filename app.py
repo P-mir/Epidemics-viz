@@ -9,7 +9,8 @@ import plotly.express as px
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+app.title = "Epidemics over time"
+server = app.server
 df = pd.read_csv('data/epidemics.csv', sep=';', encoding='latin1')
 df.dropna(inplace=True)
 df['Death toll'] = df['Death toll'].astype("int32")
@@ -42,4 +43,4 @@ def update_figure(range):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
